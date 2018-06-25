@@ -12,6 +12,8 @@ class SampleApp extends StatelessWidget {
       theme: new ThemeData(
         primaryColor: Colors.grey,
         backgroundColor: Colors.blueAccent,
+        brightness: Brightness.dark,
+        accentColor: Colors.cyan,
       ),
       home: new RandomWords()
 
@@ -59,7 +61,7 @@ class RandomWordsState extends State<RandomWords> {
     final bool alreadySaved = _saved.contains(pair);
     return new ListTile(
         title: new Text(
-          pair.asPascalCase,
+          pair.asUpperCase,
           style: _biggerFont,
         ),
         trailing: new Icon(
@@ -86,7 +88,7 @@ class RandomWordsState extends State<RandomWords> {
                 (WordPair pair) {
               return new ListTile(
                 title: new Text(
-                  pair.asPascalCase,
+                  pair.asLowerCase,
                   style: _biggerFont,
                 ),
               );
